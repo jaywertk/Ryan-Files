@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Ryan Files Archive</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background: #1b1b1b;
+      color: #e6dccf;
+    }
+
+    header {
+      background: #2a2a2a;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #444;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-style: italic;
+      color: #aaa;
+    }
+
+    .library {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .file {
+      background: #2f2b27;
+      border: 1px solid #555;
+      padding: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .file:hover {
+      background: #3a352f;
+      transform: scale(1.03);
+    }
+
+    .file h2 {
+      margin: 0;
+      color: #d4b483;
+    }
+
+    .preview {
+      margin-top: 10px;
+      color: #bbb;
+    }
+
+    .full-text {
+      margin-top: 15px;
+      display: none;
+      line-height: 1.5;
+      color: #e6dccf;
+      border-top: 1px solid #555;
+      padding-top: 10px;
+    }
+
+    .file.open .full-text {
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.8em;
+      color: #777;
+      border-top: 1px solid #444;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>📂 THE RYAN FILES</h1>
+  <p>Confidential Archive — Unauthorized Access Strictly Encouraged</p>
+</header>
+
+<section class="library"></section>
+
+<footer>
+  <p>© 2026 The Ryan Files — Definitely Real Investigations</p>
+</footer>
+
+<script>
+  const files = [
+    {
+      title: "Case #001: The Missing Snacks",
+      text: "Multiple witnesses confirm snacks were present. Ryan entered the room. Snacks vanished. Coincidence? Unlikely."
+    },
+    {
+      title: "Case #014: The 3AM Conspiracy",
+      text: "Why is Ryan awake at 3AM? Who is he texting? What does he know?"
+    },
+    {
+      title: "Case #027: WiFi Bandit",
+      text: "Internet speed drops dramatically whenever Ryan logs on."
+    },
+    {
+      title: "Case #042: Sock Dimension Portal",
+      text: "All missing socks appear to be linked to Ryan. Scientists remain confused."
+    },
+    {
+      title: "Case #099: Suspiciously Funny",
+      text: "Ryan has been reported to make people laugh excessively. This may be too powerful."
+    }
+  ];
+
+  const library = document.querySelector(".library");
+
+  files.forEach(file => {
+    const div = document.createElement("div");
+    div.className = "file";
+
+    div.innerHTML = `
+      <h2>${file.title}</h2>
+      <p class="preview">${file.text.substring(0, 60)}...</p>
+      <div class="full-text">${file.text}</div>
+    `;
+
+    div.addEventListener("click", () => {
+      div.classList.toggle("open");
+    });
+
+    library.appendChild(div);
+  });
+</script>
+
+</body>
+</html>
