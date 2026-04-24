@@ -59,7 +59,7 @@
 ## 🌐 Launch Investigation
 
 <p align="center">
-  <a href="https://YOUR-USERNAME.github.io/Ryan-Files/">
+  <a href="[https://YOUR-USERNAME.github.io/Ryan-Files/]">
     <img src="https://img.shields.io/badge/ENTER%20DATABASE-click%20here-blue?style=for-the-badge">
   </a>
 </p>
